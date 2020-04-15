@@ -16,16 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t)
  put them here: 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ int
+ char 
+ bool 
+ float 
+ double
+ void
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration function.
     give each declaration an initial value
@@ -65,10 +61,26 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
+    int floor = 13;
+    int seatNum = 1;
+
+    char symb1 = 'c';
+    char symb2 = 'b';
+    char symb3 = ' ';
+
+    bool trigger = true;
+    bool triggerNext = false;
+    bool statementIs = true;
     
+    float num1 = 49506.2f;
+    float num2 = 984.4f;
+    float num3 = 395.5f;
+
+    double dnum1 = 5605533.7;
+    double dnum2 = 4.563;
+    double dnum3 = 0.1;
     
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number,floor, seatNum, symb1, symb2, symb3, trigger, triggerNext, statementIs, num1, num2, num3, dnum1, dnum2, dnum3); //passing each variable declared to the ignoreUnused() function
 }
 /*
  10 functions
@@ -83,42 +95,80 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+void goToFloor(int floor = 1)
+{
+    ignoreUnused(floor);
+}
 
 /*
  2)
  */
-
+char combineSymbols(char symb1 = 't', char symb2 = ' ', char symb3 = 'm')
+{
+    ignoreUnused(symb1, symb2, symb3);
+    return {};
+}
 /*
  3)
  */
-
+double addValues(double dnum1 = 0.1, double dnum2 = 0.7)
+{
+    ignoreUnused(dnum1, dnum2);
+    return {};
+}
 /*
  4)
  */
-
+double multValues(double dnum1, double dnum2)
+{
+    ignoreUnused(dnum1, dnum2);
+    return {};
+}
 /*
  5)
  */
-
+bool checkStatment(bool statementIs = true, char symb1 = 'u')
+{
+    ignoreUnused(statementIs, symb1);
+    return {};
+}
 /*
  6)
  */
-
+void bookTicket(bool trigger, int seatNum)
+{
+    ignoreUnused(trigger, seatNum);
+}
 /*
  7)
  */
-
+void stopElevator(int floor = 1)
+{
+    ignoreUnused(floor);
+}
 /*
  8)
  */
-
+float doubleValue(float num1)
+{
+    ignoreUnused(num1);
+    return {};
+}
 /*
  9)
  */
-
+char assignSymbol(char symb1)
+{
+    ignoreUnused(symb1);
+    return {};
+}
 /*
  10)
  */
+void rentAFlat(int number)
+{
+    ignoreUnused(number);
+}
 
 int main()
 {
@@ -126,27 +176,37 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    goToFloor(13);
+
     //2)
-    
+    auto newSymb = combineSymbols('f', 'l', 'y');
+
     //3)
-    
+    auto newVal = addValues(4.5, 8.0);
+
     //4)
-    
+    auto multVal = multValues(5.4, 2.042);
+
     //5)
-    
+    auto statment2 = checkStatment(false, 'y');
+
     //6)
-    
+    bookTicket(true, 68);
+
     //7)
-    
+    stopElevator(13);
+
     //8)
-    
+    auto num4 = doubleValue(5.95f);
+
     //9)
-    
+    auto sumb4 = assignSymbol(' ');
+
     //10)
-    
-    
-    ignoreUnused(carRented);
+    rentAFlat(7);
+
+    ignoreUnused(carRented, newSymb, newVal, multVal, statment2, num4, sumb4);
+
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
