@@ -72,30 +72,15 @@ void variableDeclarations()
     bool triggerNext = false;
     bool statementIs = true;
     
-    float num1 = 49506;
-    float num2 = 984;
-    float num3 = 395.5;
+    float num1 = 49506.2f;
+    float num2 = 984.4f;
+    float num3 = 395.5f;
 
-    double dnum1 = 5605533;
-    double dnum2 = 4;
-    double dnum3 = 0;
+    double dnum1 = 5605533.7;
+    double dnum2 = 4.563;
+    double dnum3 = 0.1;
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
-    ignoreUnused(floor); 
-    ignoreUnused(seatNum);
-    ignoreUnused(symb1);  
-    ignoreUnused(symb2);  
-    ignoreUnused(symb3);  
-    ignoreUnused(trigger); 
-    ignoreUnused(triggerNext); 
-    ignoreUnused(statementIs); 
-    ignoreUnused(num1); 
-    ignoreUnused(num2); 
-    ignoreUnused(num3); 
-    ignoreUnused(dnum1); 
-    ignoreUnused(dnum2); 
-    ignoreUnused(dnum3); 
-
+    ignoreUnused(number,floor, seatNum, symb1, symb2, symb3, trigger, triggerNext, statementIs, num1, num2, num3, dnum1, dnum2, dnum3); //passing each variable declared to the ignoreUnused() function
 }
 /*
  10 functions
@@ -126,7 +111,7 @@ char combineSymbols(char symb1 = 't', char symb2 = ' ', char symb3 = 'm')
 /*
  3)
  */
-double addValues(double dnum1 = 0, double dnum2 = 0)
+double addValues(double dnum1 = 0.1, double dnum2 = 0.7)
 {
     ignoreUnused(dnum1, dnum2);
     return {};
@@ -197,10 +182,10 @@ int main()
     auto newSymb = combineSymbols('f', 'l', 'y');
 
     //3)
-    auto newVal = addValues(4.5, 8);
+    auto newVal = addValues(4.5, 8.0);
 
     //4)
-    auto multVal = multValues(5, 2);
+    auto multVal = multValues(5.4, 2.042);
 
     //5)
     auto statment2 = checkStatment(false, 'y');
@@ -212,7 +197,7 @@ int main()
     stopElevator(13);
 
     //8)
-    auto num4 = doubleValue(5);
+    auto num4 = doubleValue(5.95f);
 
     //9)
     auto sumb4 = assignSymbol(' ');
@@ -220,13 +205,7 @@ int main()
     //10)
     rentAFlat(7);
 
-    ignoreUnused(carRented);
-    ignoreUnused(newSymb);
-    ignoreUnused(newVal);
-    ignoreUnused(multVal);
-    ignoreUnused(statment2);
-    ignoreUnused(num4);
-    ignoreUnused(sumb4);
+    ignoreUnused(carRented, newSymb, newVal, multVal, statment2, num4, sumb4);
 
     std::cout << "good to go!" << std::endl;
     return 0;    
